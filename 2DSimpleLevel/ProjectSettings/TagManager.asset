@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GroundOrPlatform
   layers:
   - Default
   - TransparentFX
@@ -38,6 +39,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 309419997
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Objects
+    uniqueID: 3223833135
+    locked: 0
+  - name: Ground
+    uniqueID: 2255163451
+    locked: 0
+  - name: Coins
+    uniqueID: 3240086697
+    locked: 0
+  - name: Enemies
+    uniqueID: 2314970403
+    locked: 0
+  - name: Platforms
+    uniqueID: 2789925321
+    locked: 0
+  - name: Player
+    uniqueID: 2026436405
     locked: 0
