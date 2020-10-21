@@ -7,10 +7,12 @@ public class EnemyMovement : MonoBehaviour
 
     private int currentPoint;
     private Transform[] points;
+    private Animator animator;
 
     private void Start()
     {
         points = new Transform[path.childCount];
+        animator = GetComponent<Animator>();
 
         for (int i = 0; i < path.childCount; i++)
         {
