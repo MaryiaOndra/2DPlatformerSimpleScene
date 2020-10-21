@@ -1,41 +1,73 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D playerRb;
-    [SerializeField] private float speed;
+    [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private float jumpForce;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask whatIsGround;
 
-    private bool isOnGround; 
+    private float maxSpeed = 5f;
+    private float xValue;
+    private float groundRadius = 0.02f;
 
-    private float horizontalInput;
     //private float leftBound = -6.171f;
     //private float rightBound = 6.249f;
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(horizontalInput * Vector2.right * Time.deltaTime * speed);
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
-        if (Input.GetKey(KeyCode.UpArrow) && isOnGround)
+    private bool isGrounded;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        //make player jump
+        if (isGrounded && Input.GetKey(KeyCode.UpArrow))
         {
-           playerRb.AddForce(Vector2.up * jumpForce);
+            animator.SetBool("OnGround", false);
+            playerRb.AddForce(Vector2.up * jumpForce);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void FixedUpdate()
     {
-        if (collision.gameObject.CompareTag("GroundOrPlatform"))
+        //check if player touch the ground
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);        
+        animator.SetBool("OnGround", isGrounded);
+        animator.SetFloat("vSpeed", playerRb.velocity.y);
+        //if (!isGrounded)
+        //{
+        //    return;
+        //}
+
+        //check if player press arrows or A, D
+        xValue = Input.GetAxis("Horizontal");
+
+        //change Speed component in Animator for x position value
+        animator.SetFloat("Speed", Mathf.Abs(xValue));
+        
+        //changing the direction of movement of the Player and mirror its image
+        FlipPlayerSprite();
+
+        //make player move with max speed
+        playerRb.velocity = new Vector2(xValue * maxSpeed, playerRb.velocity.y);
+    }
+
+    private void FlipPlayerSprite() 
+    {
+        if (xValue < 0)
         {
-            Debug.Log("I AM ON THE GROUND");
-            isOnGround = true;
+            spriteRenderer.flipX = true;
         }
-        else 
+        else if (xValue > 0)
         {
-            isOnGround = false;
-        }          
+            spriteRenderer.flipX = false;
+        }
     }
 }
