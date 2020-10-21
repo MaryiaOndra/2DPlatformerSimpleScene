@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float xValue;
     private float groundRadius = 0.02f;
 
+    ///TODO: make bounds around scene
     //private float leftBound = -6.171f;
     //private float rightBound = 6.249f;
 
@@ -41,10 +42,6 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);        
         animator.SetBool("OnGround", isGrounded);
         animator.SetFloat("vSpeed", playerRb.velocity.y);
-        //if (!isGrounded)
-        //{
-        //    return;
-        //}
 
         //check if player press arrows or A, D
         xValue = Input.GetAxis("Horizontal");
