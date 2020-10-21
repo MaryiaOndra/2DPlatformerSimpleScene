@@ -3,20 +3,15 @@ using UnityEngine.Events;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private UnityEvent collectCoin;
+    [SerializeField] private AudioClip audioClip;
 
-    private SpriteRenderer spriteRenderer;
-
-    private void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<PlayerMovement>(out PlayerMovement player))
         {
-            collectCoin?.Invoke();
-            spriteRenderer.enabled = false;
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
+
+            Destroy(gameObject);
         }
     }
 }

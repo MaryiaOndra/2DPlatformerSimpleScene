@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Experimental.AssetImporters;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D playerRb;
+    [SerializeField] public Rigidbody2D playerRb;
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask whatIsGround;
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float maxSpeed = 5f;
     private float xValue;
     private float groundRadius = 0.02f;
+    private bool isDead;
 
     ///TODO: make bounds around scene
     //private float leftBound = -6.171f;
@@ -43,17 +45,20 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("OnGround", isGrounded);
         animator.SetFloat("vSpeed", playerRb.velocity.y);
 
-        //check if player press arrows or A, D
-        xValue = Input.GetAxis("Horizontal");
+        if (!isDead)
+        {
+            //check if player press arrows or A, D
+            xValue = Input.GetAxis("Horizontal");
 
-        //change Speed component in Animator for x position value
-        animator.SetFloat("Speed", Mathf.Abs(xValue));
-        
-        //changing the direction of movement of the Player and mirror its image
-        FlipPlayerSprite();
+            //change Speed component in Animator for x position value
+            animator.SetFloat("Speed", Mathf.Abs(xValue));
 
-        //make player move with max speed
-        playerRb.velocity = new Vector2(xValue * maxSpeed, playerRb.velocity.y);
+            //changing the direction of movement of the Player and mirror its image
+            FlipPlayerSprite();
+
+            //make player move with max speed
+            playerRb.velocity = new Vector2(xValue * maxSpeed, playerRb.velocity.y);
+        }
     }
 
     private void FlipPlayerSprite() 
@@ -65,6 +70,14 @@ public class PlayerMovement : MonoBehaviour
         else if (xValue > 0)
         {
             spriteRenderer.flipX = false;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.TryGetComponent<EnemyMovement>(out EnemyMovement movement))
+        {
+            animator.SetBool("IsDead", true);
+            isDead = true;
         }
     }
 }
