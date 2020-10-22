@@ -9,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     private Transform[] points;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private Transform target;
+    private bool isAttacking;
 
     private void Start()
     {
@@ -24,10 +26,10 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void Update()
-    {
+    {  
         //make object move from one point to another
-        Transform target = points[currentPoint];
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        target = points[currentPoint];
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);       
 
         if (transform.position == target.position)
         {
@@ -44,15 +46,12 @@ public class EnemyMovement : MonoBehaviour
         animator.SetFloat("Speed", speed);
     }
 
-    //private void FlipPlayerSprite()
-    //{
-    //    if (xValue < 0)
-    //    {
-    //        spriteRenderer.flipX = true;
-    //    }
-    //    else if (xValue > 0)
-    //    {
-    //        spriteRenderer.flipX = false;
-    //    }
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.TryGetComponent<PlayerMovement>(out PlayerMovement player))
+        {
+            animator.SetBool("Attack", true);
+            speed = 0;
+        }
+    }
 }

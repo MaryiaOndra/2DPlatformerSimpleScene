@@ -1,5 +1,4 @@
-﻿using UnityEditor.Experimental.AssetImporters;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -76,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.TryGetComponent<EnemyMovement>(out EnemyMovement movement))
         {
-            animator.SetBool("IsDead", true);
+            animator.SetTrigger("IsDead");
             isDead = true;
         }
     }
