@@ -9,7 +9,7 @@ Create a simple 2D platformer in which to implement:
 
 ## Personal additions
 * animation for enemies
-* animation of the deth of the player when he collides with the enemy
+* animation of the death of the player when he collides with the enemy
 * animation of jumping
 * background audio 
 * audio of collecting coins
