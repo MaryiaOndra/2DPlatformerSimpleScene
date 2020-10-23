@@ -3,7 +3,7 @@
 public class MummyMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
-    private int yDestroyPos = -1;
+    private int yDestroyPos = -5;
 
     private void Start()
     {
