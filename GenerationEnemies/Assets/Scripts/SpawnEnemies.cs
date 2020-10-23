@@ -5,7 +5,7 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] Transform path;
     [SerializeField] GameObject enemy;
     private Transform[] points;
-    private float startDelay = 0;
+    private float startDelay = 2;
     private float spawnInterval = 2;
     private int randomPoint;
 
