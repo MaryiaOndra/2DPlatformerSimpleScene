@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TurnOnAlarm : MonoBehaviour
 {
@@ -14,5 +12,13 @@ public class TurnOnAlarm : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement player))
+        {
+            
+        }
     }
 }

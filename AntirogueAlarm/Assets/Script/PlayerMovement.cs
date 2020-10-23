@@ -34,4 +34,6 @@ public class PlayerMovement : MonoBehaviour
      
         animator.SetFloat("Speed", Math.Abs(verticalInput));
     }
+
+    
 }
