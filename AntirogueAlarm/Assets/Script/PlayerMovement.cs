@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Rigidbody playerRB;
-    [SerializeField] private float speed;
-
+    private float turnSpeed = 40;
+    private float speed = 2;
     private Animator animator;
 
     // Start is called before the first frame update
@@ -15,24 +15,23 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
         Debug.Log(verticalInput);
+
+        transform.Rotate(Vector3.up * Time.deltaTime * horizontalInput * turnSpeed);
 
         if (verticalInput > 0)
         {
-            Debug.Log("FORWARD");
-            playerRB.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            //gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
         else if (verticalInput < 0)
         {
-            Debug.Log("BACK");
-            playerRB.transform.Translate(Vector3.back * speed * Time.deltaTime);
-          //  gameObject.transform.Translate(Vector3.back * speed * Time.deltaTime);
+           gameObject.transform.Translate(Vector3.back * speed * Time.deltaTime);
         }
      
-       // animator.SetFloat("Speed", Math.Abs(verticalInput));
+        animator.SetFloat("Speed", Math.Abs(verticalInput));
     }
 }
