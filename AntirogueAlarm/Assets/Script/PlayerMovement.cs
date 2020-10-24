@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
-        Debug.Log(verticalInput);
 
         transform.Rotate(Vector3.up * Time.deltaTime * horizontalInput * turnSpeed);
 
@@ -33,7 +31,5 @@ public class PlayerMovement : MonoBehaviour
         }
      
         animator.SetFloat("Speed", Math.Abs(verticalInput));
-    }
-
-    
+    }    
 }
