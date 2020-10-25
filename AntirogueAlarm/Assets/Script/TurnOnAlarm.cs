@@ -7,19 +7,19 @@ public class TurnOnAlarm : MonoBehaviour
     private LightIntensity lightIntensity;
     private SoundVolume soundVolume;
 
-
     void Start()
     {
         lightIntensity = alarm.GetComponent<LightIntensity>();
         soundVolume = alarm.GetComponent<SoundVolume>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement player))
         {
             lightIntensity.alarmOn = true;
             soundVolume.soundOn = true;
+            soundVolume.audioSource.Play();
         }
     }
 
@@ -28,7 +28,8 @@ public class TurnOnAlarm : MonoBehaviour
         if (other.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement player))
         {
             lightIntensity.alarmOn = false;
-            soundVolume.soundOn = true;
+            soundVolume.soundOn = false;
+            soundVolume.audioSource.Stop();
         }
     }
 }

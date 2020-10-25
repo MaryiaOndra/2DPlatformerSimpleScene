@@ -2,15 +2,14 @@
 
 public class LightIntensity : MonoBehaviour
 {
+    internal bool alarmOn;
+
     private float lowIntensity = 0.5f;
     private float hightIntensity = 5.0f;
     private float fadeSpeed = 2.0f;
     private float changeMargin = 0.2f;
-
-    internal bool alarmOn;
-
-    private Light light;
     private float targetIntensity;
+    private Light light;
 
     private void Start()
     {

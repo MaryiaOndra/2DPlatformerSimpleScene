@@ -7,13 +7,11 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 2;
     private Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         float verticalInput = Input.GetAxis("Vertical");
