@@ -5,13 +5,13 @@ It is best to install the alarm on the door so that we know that a rogue has ent
 The alarm should start to howl as soon as the rogue enters the house and not stop until the rogue escapes from the house.
 IMPORTANT! The sound should fade in and out smoothly, this should be achieved by changing the volume.
 
+###### Demo video link https://photos.app.goo.gl/2gziknDaR4MhQGKJ6
 
 ### Task №2
 You have several points of spawn (creation) of enemies on the stage.
 You need to write a script so that enemies spawn every 2 seconds alternately from different spawn points.
 
-###### Demo video link
-https://photos.app.goo.gl/T6WVnzextCwRaV698
+###### Demo video link https://photos.app.goo.gl/T6WVnzextCwRaV698
 
 ### Task №3 
 Create a simple 2D platformer in which to implement:
