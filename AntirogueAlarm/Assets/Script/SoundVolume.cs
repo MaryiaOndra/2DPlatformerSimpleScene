@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 
-public class AlarmSoundVolume : MonoBehaviour
+public class SoundVolume : MonoBehaviour
 {
     private float _minVolume = 0.1f;
     private float _maxVolume = 1f;
@@ -17,7 +16,6 @@ public class AlarmSoundVolume : MonoBehaviour
     {
         _audioSource = gameObject.GetComponent<AudioSource>();
         _audioSource.volume = 0f;
-        _audioSource.Play();
     }
 
     private void Update()
@@ -25,13 +23,11 @@ public class AlarmSoundVolume : MonoBehaviour
         if (gameObject.activeSelf)
         {            
             _audioSource.volume = Mathf.Lerp(_audioSource.volume, _targetVolume, Time.deltaTime * _fadeSpeed);
-            _audioSource.PlayOneShot(_audioSource.clip);
             CheckSoundVolume();         
         }
         else
         {
             _audioSource.volume = Mathf.Lerp(_audioSource.volume, 0f, Time.deltaTime * _fadeSpeed);
-            _audioSource.Stop();
         }
     }
     

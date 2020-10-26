@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof (Light))]
-public class AlarmLightIntensity : MonoBehaviour
+public class LightIntensity : MonoBehaviour
 {    
     private float _lowIntensity = 0.5f;
     private float _hightIntensity = 5.0f;
@@ -10,15 +10,12 @@ public class AlarmLightIntensity : MonoBehaviour
     private float _targetIntensity;
 
     private Light _light;
-    private TurnOnAlarm _turnOnAlarm;
 
     private void Start()
     {
         _light = gameObject.GetComponent<Light>();
         _light.intensity = 0f;
         _targetIntensity = _hightIntensity;
-
-        _turnOnAlarm = GetComponent<TurnOnAlarm>();
     }
 
     private void Update() 
