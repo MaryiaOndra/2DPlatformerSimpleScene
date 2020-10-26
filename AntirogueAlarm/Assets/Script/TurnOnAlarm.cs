@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 
-
 public class TurnOnAlarm : MonoBehaviour
 {
-    [SerializeField] private GameObject _alarm;
-
+    [SerializeField] private Alarm _alarm;
+    
     private bool alarmOn;
 
-    internal bool AlarmOn => alarmOn;
+    public bool AlarmOn => alarmOn;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement player))
-        {
+        {            
+            Debug.Log("ALARM");
+            _alarm.gameObject.SetActive(true);
             alarmOn = true;
         }
     }
@@ -21,6 +22,8 @@ public class TurnOnAlarm : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement player))
         {
+            Debug.Log("turn OFF");
+            _alarm.gameObject.SetActive(false);
             alarmOn = false;
         }
     }

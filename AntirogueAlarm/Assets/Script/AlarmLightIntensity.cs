@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof (Light))]
-public class LightIntensity : MonoBehaviour
-{
+public class AlarmLightIntensity : MonoBehaviour
+{    
     private float _lowIntensity = 0.5f;
     private float _hightIntensity = 5.0f;
     private float _fadeSpeed = 2.0f;
@@ -23,7 +23,9 @@ public class LightIntensity : MonoBehaviour
 
     private void Update() 
     {
-        if (_turnOnAlarm.AlarmOn)
+        Debug.Log(gameObject.activeSelf);
+
+        if (gameObject.activeSelf)
         {
             _light.intensity = Mathf.Lerp(_light.intensity, _targetIntensity, Time.deltaTime * _fadeSpeed);
             CheckTargetIntensity();
