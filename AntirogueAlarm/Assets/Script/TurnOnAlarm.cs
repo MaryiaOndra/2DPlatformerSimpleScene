@@ -1,25 +1,19 @@
 ﻿using UnityEngine;
 
+
 public class TurnOnAlarm : MonoBehaviour
 {
-    [SerializeField] private GameObject alarm;
+    [SerializeField] private GameObject _alarm;
 
-    private LightIntensity lightIntensity;
-    private SoundVolume soundVolume;
+    private bool alarmOn;
 
-    void Start()
-    {
-        lightIntensity = alarm.GetComponent<LightIntensity>();
-        soundVolume = alarm.GetComponent<SoundVolume>();
-    }
+    internal bool AlarmOn => alarmOn;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement player))
         {
-            lightIntensity.alarmOn = true;
-            soundVolume.soundOn = true;
-            soundVolume.audioSource.Play();
+            alarmOn = true;
         }
     }
 
@@ -27,9 +21,7 @@ public class TurnOnAlarm : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement player))
         {
-            lightIntensity.alarmOn = false;
-            soundVolume.soundOn = false;
-            soundVolume.audioSource.Stop();
+            alarmOn = false;
         }
     }
 }
