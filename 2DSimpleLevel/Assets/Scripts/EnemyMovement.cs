@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
+
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform path;
@@ -27,7 +30,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {  
-        //make object move from one point to another
         target = points[currentPoint];
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);       
 
