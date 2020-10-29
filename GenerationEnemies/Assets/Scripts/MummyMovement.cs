@@ -2,19 +2,19 @@
 
 public class MummyMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    private int yDestroyPos = -5;
+    [SerializeField] private float _speed;
+    private int _yDestroyPos = -5;
 
     private void Start()
     {
         SetEulerAngle();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-        if (transform.position.y < yDestroyPos)
+    private void Update()
+    {
+        transform.Translate(Vector3.forward * Time.deltaTime * _speed);
+
+        if (transform.position.y < _yDestroyPos)
         {
             Destroy(gameObject);
         }

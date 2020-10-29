@@ -2,32 +2,32 @@
 
 public class SpawnEnemies : MonoBehaviour
 {
-    [SerializeField] Transform path;
-    [SerializeField] GameObject enemy;
-    private Transform[] points;
-    private float startDelay = 2;
-    private float spawnInterval = 2;
-    private int randomPoint;
+    [SerializeField] private Transform _path;
+    [SerializeField] private GameObject _enemy;
 
-    // Start is called before the first frame update
+    private Transform[] _points;
+    private float _startDelay = 2;
+    private float _spawnInterval = 2;
+    private int _randomPoint;
+
     void Start()
     {
-        points = new Transform[path.childCount];
+        _points = new Transform[_path.childCount];
 
-        for (int i = 0; i < path.childCount; i++)
+        for (int i = 0; i < _path.childCount; i++)
         {
-            points[i] = path.GetChild(i);
+            _points[i] = _path.GetChild(i);
         }
 
-        InvokeRepeating("SpawnInRandomPlace", startDelay, spawnInterval);
+        InvokeRepeating("SpawnInRandomPlace", _startDelay, _spawnInterval);
     }
 
     private void SpawnInRandomPlace() 
     {
-        randomPoint = Random.Range(0, path.childCount);
+        _randomPoint = Random.Range(0, _path.childCount);
 
-        Vector3 spawnPos = points[randomPoint].position;
+        Vector3 spawnPos = _points[_randomPoint].position;
 
-        Instantiate(enemy, spawnPos, enemy.transform.rotation);        
+        Instantiate(_enemy, spawnPos, _enemy.transform.rotation);        
     }
 }
