@@ -10,7 +10,7 @@ public class SpawnEnemies : MonoBehaviour
     private float _spawnInterval = 2;
     private int _randomPoint;
 
-    void Start()
+    private void Start()
     {
         _points = new Transform[_path.childCount];
 
