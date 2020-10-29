@@ -1,52 +1,47 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class SoundVolume : MonoBehaviour
 {
-    private float minVolume = 0.2f;
-    private float maxVolume = 1f;
-    private float targetVolume;
-    private float changeMargin = 0.1f;
+    private float _minVolume = 0.1f;
+    private float _maxVolume = 1f;
+    private float _targetVolume;
+    private float _changeMargin = 0.1f;
+    private float _fadeSpeed = 0.6f;
 
-    [SerializeField] private float fadeSpeed;
+    private AudioSource _audioSource;
 
-    private AudioSource audioSource;
-
-    [SerializeField] internal bool soundOn;
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.volume = 0f;
+        _audioSource = gameObject.GetComponent<AudioSource>();
+        _audioSource.volume = 0f;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (soundOn)
-        {
-            Debug.Log("soundOn");
-            audioSource.volume = Mathf.Lerp(audioSource.volume, targetVolume, Time.deltaTime * fadeSpeed);
-            CheckSoundVolume();
+        if (gameObject.activeSelf)
+        {            
+            _audioSource.volume = Mathf.Lerp(_audioSource.volume, _targetVolume, Time.deltaTime * _fadeSpeed);
+            CheckSoundVolume();         
         }
         else
         {
-            audioSource.volume = Mathf.Lerp(audioSource.volume, 0f, Time.deltaTime * fadeSpeed);
+            _audioSource.volume = Mathf.Lerp(_audioSource.volume, 0f, Time.deltaTime * _fadeSpeed);
         }
     }
-
+    
     private void CheckSoundVolume() 
     {
-        if (Mathf.Abs(targetVolume - audioSource.volume) < changeMargin)
+        if (Mathf.Abs(_targetVolume - _audioSource.volume) < _changeMargin)
         {
-            if (targetVolume == maxVolume)
+            if (_targetVolume == _maxVolume)
             {
-                targetVolume = minVolume;
+                _targetVolume = _minVolume;
             }
             else
             {
-                targetVolume = maxVolume;
+                _targetVolume = _maxVolume;
             }
         }
     }

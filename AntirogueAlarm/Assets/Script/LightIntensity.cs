@@ -1,48 +1,49 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof (Light))]
 public class LightIntensity : MonoBehaviour
-{
-    private float lowIntensity = 0.5f;
-    private float hightIntensity = 5.0f;
-    private float fadeSpeed = 2.0f;
-    private float changeMargin = 0.2f;
+{    
+    private float _lowIntensity = 0.5f;
+    private float _hightIntensity = 5.0f;
+    private float _fadeSpeed = 2.0f;
+    private float _changeMargin = 0.2f;
+    private float _targetIntensity;
 
-    internal bool alarmOn;
-
-    private Light light;
-    private float targetIntensity;
+    private Light _light;
 
     private void Start()
     {
-        light = gameObject.GetComponent<Light>();
-        light.intensity = 0f;
-        targetIntensity = hightIntensity;
+        _light = gameObject.GetComponent<Light>();
+        _light.intensity = 0f;
+        _targetIntensity = _hightIntensity;
     }
 
     private void Update() 
     {
-        if (alarmOn)
+        Debug.Log(gameObject.activeSelf);
+
+        if (gameObject.activeSelf)
         {
-            light.intensity = Mathf.Lerp(light.intensity, targetIntensity, Time.deltaTime * fadeSpeed);
+            _light.intensity = Mathf.Lerp(_light.intensity, _targetIntensity, Time.deltaTime * _fadeSpeed);
             CheckTargetIntensity();
         }
         else
         {
-            light.intensity = Mathf.Lerp(light.intensity, 0f, Time.deltaTime * fadeSpeed);
+            _light.intensity = Mathf.Lerp(_light.intensity, 0f, Time.deltaTime * _fadeSpeed);
         }
     }
 
     private void CheckTargetIntensity() 
     {
-        if (Mathf.Abs(targetIntensity - light.intensity) < changeMargin)
+        if (Mathf.Abs(_targetIntensity - _light.intensity) < _changeMargin)
         {
-            if (targetIntensity == hightIntensity)
+            if (_targetIntensity == _hightIntensity)
             {
-                targetIntensity = lowIntensity;
+                _targetIntensity = _lowIntensity;
             }
             else 
             {
-                targetIntensity = hightIntensity;
+                _targetIntensity = _hightIntensity;
             }
         }
     }
