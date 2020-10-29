@@ -1,57 +1,58 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
+
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform path;
-    [SerializeField] private float speed;
+    [SerializeField] private Transform _path;
+    [SerializeField] private float _speed;
 
-    private int currentPoint;
-    private Transform[] points;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-    private Transform target;
-    private bool isAttacking;
+    private int _currentPoint;
+    private Transform[] _points;
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
+    private Transform _target;
 
     private void Start()
     {
-        points = new Transform[path.childCount];
+        _points = new Transform[_path.childCount];
 
-        for (int i = 0; i < path.childCount; i++)
+        for (int i = 0; i < _path.childCount; i++)
         {
-            points[i] = path.GetChild(i);
+            _points[i] = _path.GetChild(i);
         }
 
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {  
-        //make object move from one point to another
-        target = points[currentPoint];
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);       
+        _target = _points[_currentPoint];
+        transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);       
 
-        if (transform.position == target.position)
+        if (transform.position == _target.position)
         {
-            currentPoint++;
-            spriteRenderer.flipX = false;
+            _currentPoint++;
+            _spriteRenderer.flipX = false;
 
-            if (currentPoint >= points.Length)
+            if (_currentPoint >= _points.Length)
             {
-                currentPoint = 0;
-                spriteRenderer.flipX = true;
+                _currentPoint = 0;
+                _spriteRenderer.flipX = true;
             }
         }
 
-        animator.SetFloat("Speed", speed);
+        _animator.SetFloat("Speed", _speed);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.TryGetComponent<PlayerMovement>(out PlayerMovement player))
         {
-            animator.SetBool("Attack", true);
-            speed = 0;
+            _animator.SetBool("Attack", true);
+            _speed = 0;
         }
     }
 }
