@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof (Light))]
+
 public class LightIntensity : MonoBehaviour
 {    
     private float _lowIntensity = 0.5f;
