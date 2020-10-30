@@ -673,8 +673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a231b0d1e43e1834faec314e686623c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: {fileID: 678472324}
-  enemy: {fileID: 7294741525526711687, guid: 595c4d4f445e8b14a9523ed554171b51, type: 3}
+  _path: {fileID: 678472324}
+  _enemy: {fileID: 7294741525526711687, guid: 595c4d4f445e8b14a9523ed554171b51, type: 3}
 --- !u!4 &877961623
 Transform:
   m_ObjectHideFlags: 0

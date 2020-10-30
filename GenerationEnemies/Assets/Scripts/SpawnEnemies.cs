@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
@@ -6,9 +7,6 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] private GameObject _enemy;
 
     private Transform[] _points;
-    private float _startDelay = 2;
-    private float _spawnInterval = 2;
-    private int _randomPoint;
 
     private void Start()
     {
@@ -19,15 +17,18 @@ public class SpawnEnemies : MonoBehaviour
             _points[i] = _path.GetChild(i);
         }
 
-        InvokeRepeating("SpawnInRandomPlace", _startDelay, _spawnInterval);
+        StartCoroutine(SpawnRandomEnemies());
     }
 
-    private void SpawnInRandomPlace() 
+    private IEnumerator SpawnRandomEnemies() 
     {
-        _randomPoint = Random.Range(0, _path.childCount);
+        var waitForTwoSec = new WaitForSecondsRealtime(2f);
 
-        Vector3 spawnPos = _points[_randomPoint].position;
+        for (int i = 0; i < _points.Length; i++)
+        {
+            Instantiate(_enemy, _points[i].position, _enemy.transform.rotation);
 
-        Instantiate(_enemy, spawnPos, _enemy.transform.rotation);        
+            yield return waitForTwoSec;
+        }   
     }
 }
