@@ -14,7 +14,7 @@ public class LightIntensity : MonoBehaviour
 
     private void Start()
     {
-        _light = gameObject.GetComponent<Light>();
+        _light = GetComponent<Light>();
         _light.intensity = 0f;
         _targetIntensity = _hightIntensity;
     }
