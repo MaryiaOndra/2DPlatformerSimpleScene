@@ -31,7 +31,7 @@ Create a simple 2D platformer in which to implement:
 * background audio 
 * audio of collecting coins
 
-![Screenshot](2DSimpleLevel/Assets/AssetPackage/1.PNG)
+![Screenshot](WorkWithCode/2DSimpleLevel/5465.PNG)
 
 
 
