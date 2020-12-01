@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ObjectsSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b178efb346da5f64ca0a6a09c9e9a087, type: 3}
+    - {fileID: 102900000, guid: 2fc510fb0b553f445996584baecdaedf, type: 3}
+    totalSpriteSurfaceArea: 160137
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 86c1d370445eac34694d2f2632862142, type: 3}
+  - {fileID: 21300000, guid: 76f80cd1cf7eea543802dd32cb266d17, type: 3}
+  - {fileID: 21300000, guid: b0d9ad047d9f2c045982a7ecdc645e3a, type: 3}
+  - {fileID: -8821593170121914417, guid: 55e82c95608c722489376d9abcc5932d, type: 3}
+  - {fileID: -5492906926127231533, guid: 55e82c95608c722489376d9abcc5932d, type: 3}
+  - {fileID: -2421445993488504691, guid: 55e82c95608c722489376d9abcc5932d, type: 3}
+  - {fileID: 8325601128679636830, guid: 55e82c95608c722489376d9abcc5932d, type: 3}
+  - {fileID: -6003639309317043876, guid: 55e82c95608c722489376d9abcc5932d, type: 3}
+  - {fileID: 3016361080559146134, guid: 55e82c95608c722489376d9abcc5932d, type: 3}
+  - {fileID: 21300000, guid: 866a46c659641f44b98742aad4ff38b0, type: 3}
+  - {fileID: 21300000, guid: bde74a7707c856e48be6ca163e5d0f92, type: 3}
+  - {fileID: 21300000, guid: d1e56e49b9550464eba79d3cf24fa21f, type: 3}
+  - {fileID: 21300000, guid: 7de75579563cd8440ac396409f363b30, type: 3}
+  - {fileID: 21300000, guid: 34b34f79acc015a41bba964b93891327, type: 3}
+  - {fileID: 21300000, guid: 1f4b600b09a106f4b8d8ac406406e900, type: 3}
+  - {fileID: 21300000, guid: d95b89dc83c89fe49913e8eb5c3d078c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TombStone (1)
+  - Bush (2)
+  - Skeleton
+  - CoinsSmall_1
+  - CoinsSmall_0
+  - CoinsSmall_3
+  - CoinsSmall_2
+  - CoinsSmall_5
+  - CoinsSmall_4
+  - Crate
+  - ArrowSign
+  - Tree
+  - DeadBush
+  - Sign
+  - Bush (1)
+  - TombStone (2)
+  m_Tag: ObjectsSpriteAtlas
+  m_IsVariant: 0

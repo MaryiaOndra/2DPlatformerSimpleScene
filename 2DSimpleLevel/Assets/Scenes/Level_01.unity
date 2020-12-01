@@ -241,12 +241,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7e2426b18da0054380fa14c7fc0e7b7, type: 3}
---- !u!4 &238955629 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2473462762238416756, guid: cc1d69e3cc3bc54448186658db9411f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2473462760249279869}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &243802749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1716,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1016527396271406045, guid: c005cc3efaacbc44698e6550add599ab,
         type: 3}
-      propertyPath: path
+      propertyPath: _path
       value: 
       objectReference: {fileID: 805018708}
     - target: {fileID: 1461349009307404291, guid: c005cc3efaacbc44698e6550add599ab,
@@ -2138,7 +2132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1016527396271406045, guid: c005cc3efaacbc44698e6550add599ab,
         type: 3}
-      propertyPath: path
+      propertyPath: _path
       value: 
       objectReference: {fileID: 1204557989}
     - target: {fileID: 1461349009307404291, guid: c005cc3efaacbc44698e6550add599ab,
@@ -2334,36 +2328,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1357335871}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1354217384
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1354217385}
-  m_Layer: 0
-  m_Name: GroundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1354217385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354217384}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.224, y: -0.803, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 238955629}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1357335871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3917,24 +3881,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2041598477, guid: cc1d69e3cc3bc54448186658db9411f1, type: 3}
-      propertyPath: whatIsGround.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041598477, guid: cc1d69e3cc3bc54448186658db9411f1, type: 3}
-      propertyPath: groundCheck
-      value: 
-      objectReference: {fileID: 1354217385}
-    - target: {fileID: 2041598477, guid: cc1d69e3cc3bc54448186658db9411f1, type: 3}
-      propertyPath: whatIsGround.Array.data[0].m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041598477, guid: cc1d69e3cc3bc54448186658db9411f1, type: 3}
-      propertyPath: whatIsGround.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041598477, guid: cc1d69e3cc3bc54448186658db9411f1, type: 3}
-      propertyPath: jumpForce
+      propertyPath: _jumpForce
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041598477, guid: cc1d69e3cc3bc54448186658db9411f1, type: 3}
+      propertyPath: _whatIsGround.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 2473462762238416756, guid: cc1d69e3cc3bc54448186658db9411f1,
         type: 3}
@@ -4076,24 +4028,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1016527396271406045, guid: c005cc3efaacbc44698e6550add599ab,
         type: 3}
-      propertyPath: points.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1016527396271406045, guid: c005cc3efaacbc44698e6550add599ab,
-        type: 3}
-      propertyPath: path
+      propertyPath: _path
       value: 
       objectReference: {fileID: 2058720310}
-    - target: {fileID: 1016527396271406045, guid: c005cc3efaacbc44698e6550add599ab,
-        type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1016527396271406045, guid: c005cc3efaacbc44698e6550add599ab,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1461349009307404291, guid: c005cc3efaacbc44698e6550add599ab,
         type: 3}
       propertyPath: m_Name

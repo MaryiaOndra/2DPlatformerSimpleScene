@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 41c455858e5af664f92a74ae364626c6, type: 3}
+    totalSpriteSurfaceArea: 5245180
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: ee4858303e4275640bb786db7a17020b, type: 3}
+  - {fileID: 21300000, guid: 0d6e9580cc933644cafc415daca5149c, type: 3}
+  - {fileID: 21300000, guid: 424be1f07fcad804cbbbf9942f02abef, type: 3}
+  - {fileID: 21300000, guid: 04966e61634591e42b5acb2492337f4e, type: 3}
+  - {fileID: 21300000, guid: 302ef3911274e8e479002244f8584051, type: 3}
+  - {fileID: 21300000, guid: 162b4ca1f48cca2409fbbdd1ff6b44d2, type: 3}
+  - {fileID: 21300000, guid: e866cfe18f420e4438464df97a31760e, type: 3}
+  - {fileID: 21300000, guid: 3f49b2920f7e49744b890afd17bc56eb, type: 3}
+  - {fileID: 21300000, guid: 1d2ec9e23a8df9a47baf39d15f847e98, type: 3}
+  - {fileID: 21300000, guid: e02056f24427a9a42890c9945207fef1, type: 3}
+  - {fileID: 21300000, guid: 5d614e135dbf09546a025818cfd6437e, type: 3}
+  - {fileID: 21300000, guid: 744e2f1338a52de4d991abb568ffec46, type: 3}
+  - {fileID: 21300000, guid: 6dc7b8f301a72a34e91bfc2e5b770799, type: 3}
+  - {fileID: 21300000, guid: 8292d8145e94a2045a6b657ba63f0f49, type: 3}
+  - {fileID: 21300000, guid: c455ca540b63cf4428218a98f27f3c2f, type: 3}
+  - {fileID: 21300000, guid: 819abe740ef86ee408abc7c310a086f6, type: 3}
+  - {fileID: 21300000, guid: ade932a4fb1ceca4bb579db586653261, type: 3}
+  - {fileID: 21300000, guid: 31790aa4e8fc8d045a2585fd6ba4c987, type: 3}
+  - {fileID: 21300000, guid: 5a25d6d48f2df9842a98cd25bb62c0f7, type: 3}
+  - {fileID: 21300000, guid: 18d97915ec4fe1046b96a630d3205cd9, type: 3}
+  - {fileID: 21300000, guid: 7d59d265f207445418fc548e00042317, type: 3}
+  - {fileID: 21300000, guid: 26923da5cfd20d6439a048aa28d50de3, type: 3}
+  - {fileID: 21300000, guid: 1fee3df5945d1844bab1322f2e7016ac, type: 3}
+  - {fileID: 21300000, guid: eaaba516991d1cd409fab0fe8bdd4902, type: 3}
+  - {fileID: 21300000, guid: 0199e9e6f4d4a78449a911129bbb3a71, type: 3}
+  - {fileID: 21300000, guid: 2f845e17be5257c4e8aaa069b002b975, type: 3}
+  - {fileID: 21300000, guid: 9849a3272c7cd534a91f001fcb1afb19, type: 3}
+  - {fileID: 21300000, guid: 463bb3b7557534f43ae7cc61bb81510b, type: 3}
+  - {fileID: 21300000, guid: 5d28a53862415854c87543af741e3d81, type: 3}
+  - {fileID: 21300000, guid: f0c0287851b1e924691ddbcb7bb3e611, type: 3}
+  - {fileID: 21300000, guid: b99ab4a8982e9cd4390d63c443b210fd, type: 3}
+  - {fileID: 21300000, guid: 2ca22829f0c17dc43b17e206d73d86ac, type: 3}
+  - {fileID: 21300000, guid: 3145fc49ea1e13a47b62cae0ca06072b, type: 3}
+  - {fileID: 21300000, guid: 3b8674599ed35c7449c904acf7d468f9, type: 3}
+  - {fileID: 21300000, guid: 3946e16998284da4f9de78f84c173ac3, type: 3}
+  - {fileID: 21300000, guid: 8c1e242af80e2d74ea48fac2aca44757, type: 3}
+  - {fileID: 21300000, guid: 659f375a48397464d995e8367687db33, type: 3}
+  - {fileID: 21300000, guid: bf83bdea88a2b794aa8b31a929e438f0, type: 3}
+  - {fileID: 21300000, guid: dbe50e1bb12b6cd4d852b253956ca2ce, type: 3}
+  - {fileID: 21300000, guid: 30c8d94bfeecaab42ad546c625c374ff, type: 3}
+  - {fileID: 21300000, guid: 7a54ec9b92d717240bcc2cc38f096785, type: 3}
+  - {fileID: 21300000, guid: bb31eeab98ecd074d9b63a9da8a76cdf, type: 3}
+  - {fileID: 21300000, guid: c5fa028c294226141a3e8c90a964dde1, type: 3}
+  - {fileID: 21300000, guid: 04fccc4d0db469f4aba4794fd19fac60, type: 3}
+  - {fileID: 21300000, guid: ad09b27d9938d3545bb954ba1c3b6bdc, type: 3}
+  - {fileID: 21300000, guid: 9df585bda0a536c49b14091269fb2215, type: 3}
+  - {fileID: 21300000, guid: 7f3134cddc2b76e4b85d13a660efa86b, type: 3}
+  - {fileID: 21300000, guid: 3ee746dd26af111408c85406016fd7af, type: 3}
+  - {fileID: 21300000, guid: b786645e58f040648b93e27a80b9dcf6, type: 3}
+  - {fileID: 21300000, guid: 18c6be5eb2f9cd344b980a54422b9518, type: 3}
+  - {fileID: 21300000, guid: 4509d46ef82a8184fa630184206af089, type: 3}
+  - {fileID: 21300000, guid: 94ab9e7e71df8ed46b51daff96f0e024, type: 3}
+  - {fileID: 21300000, guid: 319572de25e26a8469430488d429163a, type: 3}
+  - {fileID: 21300000, guid: 71c0ae6f46291094e87c202b319b7cb7, type: 3}
+  - {fileID: 21300000, guid: f945a2af451e1b34d8c83e75ecd04738, type: 3}
+  - {fileID: 21300000, guid: 07d23adf3ce3a9647b4eb348ec0ed8d5, type: 3}
+  - {fileID: 21300000, guid: 102dc6efbda96b949ac2471d91acbf40, type: 3}
+  - {fileID: 21300000, guid: 9b195fefb764d5846982d58866d0689f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Run (4)
+  - Walk (2)
+  - Jump (6)
+  - Dead (7)
+  - Slide (7)
+  - Jump (10)
+  - Walk (10)
+  - Idle (2)
+  - Jump (5)
+  - Walk (7)
+  - Slide (3)
+  - Dead (4)
+  - Dead (6)
+  - Jump (7)
+  - Slide (10)
+  - Run (6)
+  - Idle (10)
+  - Walk (1)
+  - Idle (3)
+  - Idle (8)
+  - Idle (1)
+  - Idle (6)
+  - Dead (9)
+  - Walk (3)
+  - Run (8)
+  - Jump (8)
+  - Slide (1)
+  - Slide (8)
+  - Dead (1)
+  - Dead (8)
+  - Jump (2)
+  - Slide (2)
+  - Run (5)
+  - Idle (7)
+  - Dead (5)
+  - Run (7)
+  - Slide (6)
+  - Walk (8)
+  - Dead (10)
+  - Jump (1)
+  - Slide (4)
+  - Slide (5)
+  - Walk (5)
+  - Walk (4)
+  - Idle (4)
+  - Idle (9)
+  - Dead (3)
+  - Slide (9)
+  - Walk (6)
+  - Idle (5)
+  - Jump (9)
+  - Run (2)
+  - Jump (4)
+  - Dead (2)
+  - Jump (3)
+  - Run (3)
+  - Run (1)
+  - Walk (9)
+  m_Tag: PlayerAtlas
+  m_IsVariant: 0
